@@ -7,6 +7,7 @@ export default {
 				"primary-600": "#437EF7",
 				neutral600: "#EAEBF0",
 				navBg1: "#fff",
+				gray700: "#272D37",
 			},
 		},
 	},

@@ -65,7 +65,9 @@ export default {
 </script>
 <template>
 	<header class="sticky border-b border-b-neutral600">
-		<div class="header__container flex items-center justify-between p-4 font-semibold lg:min-w-[90%] xl:w-[80%]">
+		<div
+			class="header__container flex items-center justify-between p-4 font-semibold text-gray700 lg:min-w-[90%] xl:w-[80%]"
+		>
 			<img src="/assets/images/headerLogo.svg" alt="" class="" />
 			<button
 				:class="{ 'invisible scale-0': navOpen, 'visible scale-100': !navOpen }"
@@ -86,9 +88,9 @@ export default {
 						<img src="/assets/icons/close.svg" alt="" class="" />
 					</button>
 				</div>
-				<ul class="mobile-header__nav--list">
-					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem space-y-4">
-						<router-link
+				<ul class="mobile-header__nav--list space-y-4">
+					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem ">
+						<a
 							:to="link.path"
 							class="mobile-header__nav--link md:text-2xl"
 							:class="{
@@ -99,17 +101,20 @@ export default {
 							}"
 						>
 							{{ link.name }}
-						</router-link>
+						</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="desktop-header__nav hidden lg:block">
 				<ul class="flex justify-between gap-8">
 					<li v-for="link in desktopCta" :key="link.name" class="desktop-header__nav--listItem font-semibold">
-						<router-link v-if="!link.isResource" :to="link.path" class="desktop-header__nav--link">
+						<a v-if="!link.isResource" :to="link.path" class="desktop-header__nav--link">
 							{{ link.name }}
-						</router-link>
-						<span class="" v-else-if="link.isResource">{{ link.name }} </span>
+						</a>
+						<div aria-labelledby="menu" class="flex gap-3" v-else-if="link.isResource">
+							<span class="">{{ link.name }} </span>
+							<img src="/assets/icons/chevDown.svg" alt="icon" class="" />
+						</div>
 					</li>
 				</ul>
 			</nav>
