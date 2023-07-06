@@ -5,10 +5,16 @@ export default {
 		extend: {
 			colors: {
 				"primary-600": "#437EF7",
+				neutral100: "#EAEBF0",
 				neutral600: "#EAEBF0",
-				navBg1: "#fff",
+				neutral700: "#DAE0E6",
+				gray50: "#5F6D7E",
 				gray700: "#272D37",
+				navBg1: "#fff",
 			},
+			boxShadow: {
+				shadowXSM: "0px 1px 2px 0px rgba(16, 24, 40, 0.04)"
+			}
 		},
 	},
 	plugins: [],
