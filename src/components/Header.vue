@@ -48,6 +48,12 @@ export default {
 		toggleNav() {
 			this.navOpen = !this.navOpen;
 		},
+		signUpClasses(linkName) {
+			return linkName === "Sign Up";
+		},
+		logInClasses(linkName) {
+			return linkName === "Login";
+		},
 	},
 
 	computed: {
@@ -58,30 +64,48 @@ export default {
 };
 </script>
 <template>
-	<header class="">
-		<div class="header__container">
+	<header class="sticky border-b border-b-neutral600">
+		<div class="header__container flex items-center justify-between p-4 font-semibold lg:min-w-[90%] xl:w-[80%]">
 			<img src="/assets/images/headerLogo.svg" alt="" class="" />
-			<button :class="{ hide: navOpen }" class="header__container--menuToggle" @click="toggleNav">
+			<button
+				:class="{ 'invisible scale-0': navOpen, 'visible scale-100': !navOpen }"
+				class="header__container--menuToggle flex items-center justify-center transition duration-300 ease-in-out lg:hidden"
+				@click="toggleNav"
+			>
 				<img src="/assets/icons/menu.svg" alt="" class="" />
 			</button>
-			<nav class="mobile-header__nav" :class="{ slide: navOpen }">
-				<div class="mobile-header__nav--header">
+			<nav
+				class="mobile-header__nav absolute inset-0 z-[2] flex h-[100dvh] w-[75%] flex-col bg-navBg1 p-4 transition duration-500 md:px-5 md:py-4 lg:hidden"
+				:class="{ 'translate-x-0': navOpen, '-translate-x-full': !navOpen }"
+			>
+				<div
+					class="mobile-header__nav--header mb-6 flex items-center justify-between border-b border-b-neutral600 pb-4 font-medium"
+				>
 					<img src="/assets/images/headerLogo.svg" alt="" class="" />
 					<button class="header__container--menuToggle" @click="toggleNav">
 						<img src="/assets/icons/close.svg" alt="" class="" />
 					</button>
 				</div>
 				<ul class="mobile-header__nav--list">
-					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem">
-						<router-link :to="link.path" class="mobile-header__nav--link">
+					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem space-y-4">
+						<router-link
+							:to="link.path"
+							class="mobile-header__nav--link md:text-2xl"
+							:class="{
+								'mt-6 block text-center text-primary-600': signUpClasses(link.name),
+								'block w-full rounded-md bg-primary-600 px-[1.125rem] py-3 text-center text-white': logInClasses(
+									link.name
+								),
+							}"
+						>
 							{{ link.name }}
 						</router-link>
 					</li>
 				</ul>
 			</nav>
-			<nav class="desktop-header__nav">
+			<nav class="desktop-header__nav hidden lg:block">
 				<ul class="flex justify-between gap-8">
-					<li v-for="link in desktopCta" :key="link.name" class="desktop-header__nav--listItem">
+					<li v-for="link in desktopCta" :key="link.name" class="desktop-header__nav--listItem font-semibold">
 						<router-link v-if="!link.isResource" :to="link.path" class="desktop-header__nav--link">
 							{{ link.name }}
 						</router-link>
@@ -89,115 +113,11 @@ export default {
 					</li>
 				</ul>
 			</nav>
-			<div class="flex gap-6">
+			<div class="hidden gap-6 lg:flex">
 				<button class="font-semibold text-primary-600">Sign Up</button>
 				<button class="rounded-md bg-primary-600 px-[1.125rem] py-3 font-semibold text-white">Log in</button>
 			</div>
-			<div v-if="navOpen" @click="toggleNav" class="overlay"></div>
+			<div v-if="navOpen" @click="toggleNav" class="overlay absolute inset-0 z-[1] h-[100dvh] w-full bg-black/50"></div>
 		</div>
 	</header>
 </template>
-<style scoped>
-header {
-	position: sticky;
-	border-bottom: 1px solid var(--neutral-600);
-}
-
-.header__container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.header__container--menuToggle {
-	display: flex;
-	justify-content: center;
-
-	align-items: center;
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	transition: 0.25s ease-in-out;
-}
-
-.header__container--menuToggle:focus {
-	outline: 1px solid rgba(0, 0, 0, 0.571);
-}
-
-.header__container--menuToggle.hide {
-	visibility: hidden;
-	transform: scale(0);
-}
-
-.mobile-header__nav,
-.overlay {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	inset: 0;
-	width: 75%;
-	height: 100dvh;
-	background: var(--navBg1);
-	z-index: 2;
-	padding: 1rem;
-	transition: 0.5s ease-in-out;
-	transform: translateX(-100%);
-}
-
-.overlay {
-	background: rgba(0, 0, 0, 0.5);
-	z-index: 1;
-	width: 100%;
-	transform: translateX(0);
-}
-
-.mobile-header__nav.slide {
-	transform: translateX(0);
-}
-
-.mobile-header__nav--header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 2rem;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--neutral-600);
-}
-
-.mobile-header__nav--listItem {
-	margin: 1rem 0;
-}
-
-.desktop-header__nav,
-.header__container--cta {
-	display: none;
-}
-
-@media (min-width: 768px) {
-	.mobile-header__nav {
-		padding: 1rem 1.5rem;
-	}
-
-	.mobile-header__nav--link {
-		font-size: 1.5rem;
-	}
-}
-
-@media (min-width: 1024px) {
-	.mobile-header__nav,
-	.header__container--menuToggle {
-		display: none;
-	}
-	.desktop-header__nav,
-	.header__container--cta {
-		display: flex;
-	}
-
-	.mobile-header__nav--list {
-		flex-direction: row;
-	}
-}
-</style>

@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				"primary-600": "#437EF7",
-				"neutral-600": "#EAEBF0",
+				neutral600: "#EAEBF0",
 				navBg1: "#fff",
 			},
 		},
