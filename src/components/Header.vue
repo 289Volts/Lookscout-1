@@ -9,21 +9,37 @@ export default {
 					name: "Home",
 					path: "/",
 					isResource: false,
+					isMobile: false,
 				},
 				{
 					name: "Our Products",
 					path: "/products",
 					isResource: false,
+					isMobile: false,
 				},
 				{
 					name: "Resources",
 					path: "/resources",
 					isResource: true,
+					isMobile: true,
 				},
 				{
 					name: "Contacts",
 					path: "/contacts",
 					isResource: false,
+					isMobile: false,
+				},
+				{
+					name: "Sign Up",
+					path: "/signup",
+					isResource: false,
+					isMobile: true,
+				},
+				{
+					name: "Login",
+					path: "/login",
+					isResource: false,
+					isMobile: true,
 				},
 			],
 		};
@@ -31,6 +47,12 @@ export default {
 	methods: {
 		toggleNav() {
 			this.navOpen = !this.navOpen;
+		},
+	},
+
+	computed: {
+		desktopCta() {
+			return this.links.filter((link) => !link.isMobile || link.isResource);
 		},
 	},
 };
@@ -58,13 +80,19 @@ export default {
 				</ul>
 			</nav>
 			<nav class="desktop-header__nav">
-				<ul class="desktop-header__nav--list">
-					<li v-for="link in links" :key="link.name" class="desktop-header__nav--listItem">
+				<ul class="flex justify-between gap-8">
+					<li v-for="link in desktopCta" :key="link.name" class="desktop-header__nav--listItem">
 						<router-link v-if="!link.isResource" :to="link.path" class="desktop-header__nav--link">
-							{{ link.name }} </router-link><span class="" v-else-if="link.isResource">{{ link.name }} </span>
+							{{ link.name }}
+						</router-link>
+						<span class="" v-else-if="link.isResource">{{ link.name }} </span>
 					</li>
 				</ul>
 			</nav>
+			<div class="flex gap-6">
+				<button class="font-semibold text-primary-600">Sign Up</button>
+				<button class="rounded-md bg-primary-600 px-[1.125rem] py-3 font-semibold text-white">Log in</button>
+			</div>
 			<div v-if="navOpen" @click="toggleNav" class="overlay"></div>
 		</div>
 	</header>
@@ -87,6 +115,7 @@ header {
 .header__container--menuToggle {
 	display: flex;
 	justify-content: center;
+
 	align-items: center;
 	background: transparent;
 	border: none;
@@ -142,6 +171,11 @@ header {
 	margin: 1rem 0;
 }
 
+.desktop-header__nav,
+.header__container--cta {
+	display: none;
+}
+
 @media (min-width: 768px) {
 	.mobile-header__nav {
 		padding: 1rem 1.5rem;
@@ -153,10 +187,17 @@ header {
 }
 
 @media (min-width: 1024px) {
-
 	.mobile-header__nav,
 	.header__container--menuToggle {
 		display: none;
+	}
+	.desktop-header__nav,
+	.header__container--cta {
+		display: flex;
+	}
+
+	.mobile-header__nav--list {
+		flex-direction: row;
 	}
 }
 </style>
