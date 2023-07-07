@@ -64,9 +64,9 @@ export default {
 };
 </script>
 <template>
-	<header class="sticky bg-neutral50 border-b border-b-neutral600 ">
+	<header class="sticky border-b border-b-neutral600 bg-neutral50">
 		<div
-			class="header__container flex items-center justify-between p-4 font-semibold text-gray700 lg:min-w-[90%] xl:w-[80%]"
+			class="header__container mx-auto flex items-center justify-between p-4 font-semibold text-gray700 lg:min-w-[90%] xl:w-[80%] 2xl:w-[70%]"
 		>
 			<img src="/assets/images/headerLogo.svg" alt="" class="" />
 			<button
@@ -89,7 +89,7 @@ export default {
 					</button>
 				</div>
 				<ul class="mobile-header__nav--list space-y-4">
-					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem ">
+					<li v-for="link in links" :key="link.name" class="mobile-header__nav--listItem">
 						<a
 							:to="link.path"
 							class="mobile-header__nav--link md:text-2xl"
