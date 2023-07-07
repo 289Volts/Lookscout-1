@@ -4,7 +4,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				"primary-25": "#F5FAFF",
 				"primary-600": "#437EF7",
+				neutral50: "#FAFBFC",
 				neutral100: "#EAEBF0",
 				neutral600: "#EAEBF0",
 				neutral700: "#DAE0E6",
@@ -13,8 +15,8 @@ export default {
 				navBg1: "#fff",
 			},
 			boxShadow: {
-				shadowXSM: "0px 1px 2px 0px rgba(16, 24, 40, 0.04)"
-			}
+				shadowXSM: "0px 1px 2px 0px rgba(16, 24, 40, 0.04)",
+			},
 		},
 	},
 	plugins: [],

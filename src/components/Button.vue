@@ -3,10 +3,11 @@ export default {
 	props: {
 		text: String,
 		classes: String,
+		onClick: Function,
 	},
 };
 </script>
 
 <template>
-	<button :class="classes">{{ text }}</button>
+	<button :@click="onClick" :class="classes">{{ text }}</button>
 </template>

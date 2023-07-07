@@ -64,7 +64,7 @@ export default {
 };
 </script>
 <template>
-	<header class="sticky border-b border-b-neutral600">
+	<header class="sticky bg-neutral50 border-b border-b-neutral600 ">
 		<div
 			class="header__container flex items-center justify-between p-4 font-semibold text-gray700 lg:min-w-[90%] xl:w-[80%]"
 		>
