@@ -3,7 +3,8 @@ import Button from "./Button.vue";
 import Link from "./Link.vue";
 import ReviewCard from "./ReviewCard.vue";
 import TextContent from "./TextContent.vue";
-import TextContent2 from "./TextContent2.vue";
+import FeaturesCard from "./FeaturesCard.vue";
+import ArticleCard from "./ArticleCard.vue";
 export default {
 	data() {
 		return {
@@ -60,6 +61,32 @@ export default {
 					isMobile: true,
 				},
 			],
+			articles: [
+				{
+					heading: "Organize your digital asset with a new methodology.",
+					paragraph:
+						"Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate.",
+					image: "/assets/images/banner1.png",
+					avatar: "/assets/images/avatar1.png",
+					isMobile: true,
+				},
+				{
+					heading: "Faster ways to reach your customers and their needs.",
+					paragraph:
+						"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital divide.",
+					image: "/assets/images/banner1.png",
+					avatar: "/assets/images/avatar1.png",
+					isMobile: true,
+				},
+				{
+					heading: "Gestalt psychology in UI/UX design and beyond.",
+					paragraph:
+						"Bring to the table win-win survival  to ensure proactive domination. At the end of the day, going forward.",
+					image: "/assets/images/banner1.png",
+					avatar: "/assets/images/avatar1.png",
+					isMobile: false,
+				},
+			],
 		};
 	},
 	computed: {
@@ -72,13 +99,18 @@ export default {
 			const width = window.innerWidth;
 			return width <= 767 ? this.reviews.filter((review) => width && review.isMobile === !true) : this.reviews;
 		},
+		showArticle() {
+			const width = window.innerWidth;
+			return width <= 767 ? this.articles.filter((article) => width && article.isMobile === !true) : this.articles;
+		},
 	},
 	components: {
 		Button,
 		Link,
 		ReviewCard,
 		TextContent,
-		TextContent2,
+		FeaturesCard,
+		ArticleCard,
 	},
 };
 </script>
@@ -158,7 +190,7 @@ export default {
 					containerClass="mb-8 md:mb-10 lg:mb-16 space-y-3 text-center"
 				/>
 				<div class="">
-					<TextContent2
+					<FeaturesCard
 						heading="Redefining Product Features"
 						paragraph="Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence on cross-platform integration."
 						headingClass="text-[1.75rem] font-semibold leading-[1.3] text-gray700 md:text-[2rem]"
@@ -176,6 +208,16 @@ export default {
 					paragraphClass="text-gray50 xl:w-[70%] xl:mx-auto"
 					containerClass="mb-8 md:mb-10 lg:mb-16 space-y-3 text-center"
 				/>
+				<div class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+					<ArticleCard
+						v-for="article in showArticle"
+						:key="article.heading"
+						:heading="article.heading"
+						:paragraph="article.paragraph"
+						:banner="article.image"
+						:avatar="article.avatar"
+					/>
+				</div>
 			</div>
 		</section>
 	</main>

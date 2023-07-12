@@ -16,6 +16,7 @@ export default {
 			},
 			boxShadow: {
 				shadowXSM: "0px 1px 2px 0px rgba(16, 24, 40, 0.04)",
+				shadowMD: "0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10)",
 			},
 		},
 	},
