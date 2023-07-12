@@ -117,11 +117,11 @@ export default {
 
 <template>
 	<main class="">
-		<section class="relative isolate bg-neutral50 pt-6">
+		<section class="relative isolate bg-neutral50 pt-6 md:pt-8 lg:pt-12">
 			<div class="mx-auto w-[90%] space-y-6 md:space-y-8 xl:min-w-[80%] 2xl:w-[70%]">
 				<div class="text__content text-center">
 					<h1
-						class="mb-4 text-[2.25rem] font-semibold leading-[1.3] md:mx-auto md:mb-6 md:w-[80%] md:text-[3.25rem] md:font-bold"
+						class="mb-4 text-[2.25rem] font-semibold leading-[1.3] md:mx-auto md:mb-6 md:w-[80%] lg:mb-12 md:text-[3.25rem] md:font-bold"
 					>
 						Your Supercharged Design Workflow.
 					</h1>
@@ -147,7 +147,7 @@ export default {
 				<img :src="getHeroImage" alt="hero-section image" class="" />
 			</div>
 		</section>
-		<section class="py-8">
+		<section class="py-8 md:py-10 lg:py-16">
 			<div class="mx-auto w-[90%] xl:w-[80%] 2xl:w-[70%]">
 				<TextContent
 					heading="Our Channels Review"
@@ -167,9 +167,9 @@ export default {
 					empowerment."
 					headingClass="text-[1.5rem] font-bold text-gray700"
 					paragraphClass="text-gray50"
-					containerClass="mb-8 space-y-3 text-center"
+					containerClass="mb-8 lg:mb-16 space-y-3 text-center"
 				/>
-				<div class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+				<div class="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 lg:gap-8 lg:grid-cols-3">
 					<ReviewCard
 						v-for="review in showCard"
 						:key="review.heading"
