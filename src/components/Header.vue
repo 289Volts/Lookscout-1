@@ -74,7 +74,7 @@ export default {
 				class="header__container--menuToggle flex items-center justify-center transition duration-300 ease-in-out lg:hidden"
 				@click="toggleNav"
 			>
-				<img src="/assets/icons/menu.svg" alt="" class="" />
+				<img src="/assets/icons/menu.svg" alt="open menu button" class="" />
 			</button>
 			<nav
 				class="mobile-header__nav absolute inset-0 z-[2] flex h-[100dvh] w-[75%] flex-col bg-navBg1 p-4 transition duration-500 md:px-5 md:py-4 lg:hidden"
@@ -83,9 +83,9 @@ export default {
 				<div
 					class="mobile-header__nav--header mb-6 flex items-center justify-between border-b border-b-neutral600 pb-4 font-medium"
 				>
-					<img src="/assets/images/headerLogo.svg" alt="" class="" />
+					<img src="/assets/images/headerLogo.svg" alt="header logo" class="" />
 					<button class="header__container--menuToggle" @click="toggleNav">
-						<img src="/assets/icons/close.svg" alt="" class="" />
+						<img src="/assets/icons/close.svg" alt="close nav  button" class="" />
 					</button>
 				</div>
 				<ul class="mobile-header__nav--list space-y-4">
