@@ -3,6 +3,7 @@ import Button from "./Button.vue";
 import Link from "./Link.vue";
 import ReviewCard from "./ReviewCard.vue";
 import TextContent from "./TextContent.vue";
+import TextContent2 from "./TextContent2.vue";
 export default {
 	data() {
 		return {
@@ -77,6 +78,7 @@ export default {
 		Link,
 		ReviewCard,
 		TextContent,
+		TextContent2,
 	},
 };
 </script>
@@ -147,7 +149,7 @@ export default {
 			</div>
 		</section>
 		<section class="bg-neutral50 py-8">
-			<div class="mx-auto flex w-[90%] max-w-[70%] flex-col lg:w-[80%]">
+			<div class="mx-auto flex w-[90%] flex-col lg:w-[80%] 2xl:w-[70%]">
 				<TextContent
 					heading="Redefining Product Features"
 					paragraph="Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence on cross-platform integration."
@@ -155,6 +157,14 @@ export default {
 					paragraphClass="text-gray50"
 					containerClass="mb-8 space-y-3 text-center"
 				/>
+				<div class="">
+					<TextContent2
+						heading="Redefining Product Features"
+						paragraph="Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence on cross-platform integration."
+						headingClass="text-[1.75rem] font-semibold leading-[1.3] text-gray700"
+						paragraphClass="text-gray50"
+					/>
+				</div>
 			</div>
 		</section>
 	</main>

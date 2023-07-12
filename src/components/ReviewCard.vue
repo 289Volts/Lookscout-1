@@ -21,6 +21,7 @@ export default {
 			<Button
 				text="Show more"
 				classes="py-3 bg-white border text-[0.9375rem] font-semibold border-neutral700 shadow-shadowXSM px-[1.125rem] rounded-md"
+				:showArr=false
 			/>
 		</div>
 		<div class="space-y-2">
