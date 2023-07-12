@@ -13,7 +13,7 @@ export default {
 					src: "/assets/images/heroImg.png",
 				},
 				{
-					size: 767,
+					size: 768,
 					src: "/assets/images/heroImgMd.png",
 				},
 				{
@@ -148,23 +148,34 @@ export default {
 				</div>
 			</div>
 		</section>
-		<section class="bg-neutral50 py-8">
+		<section class="bg-neutral50 py-8 md:py-10 xl:py-16">
 			<div class="mx-auto flex w-[90%] flex-col lg:w-[80%] 2xl:w-[70%]">
 				<TextContent
 					heading="Redefining Product Features"
 					paragraph="Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence on cross-platform integration."
-					headingClass="text-[1.5rem] font-bold text-gray700"
-					paragraphClass="text-gray50"
-					containerClass="mb-8 space-y-3 text-center"
+					headingClass="text-[1.5rem] font-bold text-gray700 lg:text-[2rem]"
+					paragraphClass="text-gray50 xl:w-[70%] xl:mx-auto"
+					containerClass="mb-8 md:mb-10 lg:mb-16 space-y-3 text-center"
 				/>
 				<div class="">
 					<TextContent2
 						heading="Redefining Product Features"
 						paragraph="Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence on cross-platform integration."
-						headingClass="text-[1.75rem] font-semibold leading-[1.3] text-gray700"
+						headingClass="text-[1.75rem] font-semibold leading-[1.3] text-gray700 md:text-[2rem]"
 						paragraphClass="text-gray50"
 					/>
 				</div>
+			</div>
+		</section>
+		<section class="py-8 md:py-10 xl:py-16">
+			<div class="mx-auto flex w-[90%] flex-col lg:w-[80%] 2xl:w-[70%]">
+				<TextContent
+					heading="Latest Blog Posts"
+					paragraph="Completely synergize resource taxing relationships via premier niche markets. Professionally  cultivate one-to-one customer service with robust ideas."
+					headingClass="text-[1.5rem] font-bold text-gray700 lg:text-[2rem]"
+					paragraphClass="text-gray50 xl:w-[70%] xl:mx-auto"
+					containerClass="mb-8 md:mb-10 lg:mb-16 space-y-3 text-center"
+				/>
 			</div>
 		</section>
 	</main>
