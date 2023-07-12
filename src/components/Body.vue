@@ -74,16 +74,16 @@ export default {
 					heading: "Faster ways to reach your customers and their needs.",
 					paragraph:
 						"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital divide.",
-					image: "/assets/images/banner1.png",
-					avatar: "/assets/images/avatar1.png",
+					image: "/assets/images/banner2.png",
+					avatar: "/assets/images/avatar2.png",
 					isMobile: true,
 				},
 				{
 					heading: "Gestalt psychology in UI/UX design and beyond.",
 					paragraph:
 						"Bring to the table win-win survival  to ensure proactive domination. At the end of the day, going forward.",
-					image: "/assets/images/banner1.png",
-					avatar: "/assets/images/avatar1.png",
+					image: "/assets/images/banner3.png",
+					avatar: "/assets/images/avatar3.png",
 					isMobile: false,
 				},
 			],
@@ -118,7 +118,7 @@ export default {
 <template>
 	<main class="">
 		<section class="relative isolate bg-neutral50 pt-6">
-			<div class="mx-auto w-[90%] space-y-6 md:space-y-8 lg:min-w-[80%] 2xl:w-[70%]">
+			<div class="mx-auto w-[90%] space-y-6 md:space-y-8 xl:min-w-[80%] 2xl:w-[70%]">
 				<div class="text__content text-center">
 					<h1
 						class="mb-4 text-[2.25rem] font-semibold leading-[1.3] md:mx-auto md:mb-6 md:w-[80%] md:text-[3.25rem] md:font-bold"
@@ -200,7 +200,7 @@ export default {
 			</div>
 		</section>
 		<section class="py-8 md:py-10 xl:py-16">
-			<div class="mx-auto flex w-[90%] flex-col lg:w-[80%] 2xl:w-[70%]">
+			<div class="mx-auto flex w-[90%] flex-col xl:w-[80%] 2xl:w-[70%]">
 				<TextContent
 					heading="Latest Blog Posts"
 					paragraph="Completely synergize resource taxing relationships via premier niche markets. Professionally  cultivate one-to-one customer service with robust ideas."
